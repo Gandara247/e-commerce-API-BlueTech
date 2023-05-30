@@ -2,10 +2,12 @@ import { Router } from "express";
 import userRoutes from "./routes/user/userRoutes";
 
 
-export const router = Router();
+ const routes = Router();
 
-router.use(userRoutes)
+routes.use(userRoutes)
 
-router.get("/", async(req, res) =>{
+routes.get("/", async(req, res) =>{
     return res.sendStatus(200).json({"msg":"👌🏿 Application runnig successfully!" });
-})
+});
+
+export default routes;
