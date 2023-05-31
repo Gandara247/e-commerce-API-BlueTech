@@ -32,6 +32,7 @@ export default class User {
         return await prisma.user.findUnique({
             where: { email },
             select: {
+                id: true,
                 name: true,
                 email: true,
                 password: includePassword,
