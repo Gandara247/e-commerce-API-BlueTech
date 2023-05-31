@@ -4,6 +4,7 @@ import env from "./dotEnvConfig/dotEnvConfig";
 
 
 interface IPayLoad {
+    id: number;
     name: string;
     email: string;
     role: "admin" | "client";
