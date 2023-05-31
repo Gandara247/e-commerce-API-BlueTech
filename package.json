@@ -2,9 +2,10 @@
   "name": "e-commerce-api-bluetech",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "ts-node-dev src/."
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

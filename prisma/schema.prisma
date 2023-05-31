@@ -1,91 +1,94 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "mysql"
-    url      = env("DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-    id          Int      @id @default(autoincrement())
-    name        String
-    email       String   @unique
-    password    String
-    role        Role
-    Orders      Order[]
-    createde_at DateTime @default(now())
-    updatede_at DateTime @updatedAt
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String   @unique
+  password    String
+  role        Role
+  Orders      Order[]
+  createde_at DateTime @default(now())
+  updatede_at DateTime @updatedAt
 
-    @@map("users")
+  @@map("users")
 }
 
 enum Role {
-    admin
-    client
+  admin
+  client
 }
 
 model Order {
-    id       Int            @id @default(autoincrement())
-    user     User           @relation(fields: [userId], references: [id])
-    userId   Int
-    products ProductOrder[]
-    total    Decimal
-    coupon   Coupon?        @relation(fields: [couponId], references: [id])
-    couponId Int?
+  id       Int            @id @default(autoincrement())
+  user     User           @relation(fields: [userId], references: [id])
+  userId   Int
+  products ProductOrder[]
+  total    Decimal
+  coupon   Coupon?        @relation(fields: [couponId], references: [id])
+  couponId Int?
 
-    @@map("orders")
+  @@map("orders")
 }
 
 model Coupon {
-    id         Int     @id @default(autoincrement())
-    name       String
-    order      Order[]
-    decription String
-    discount   Decimal
+  id         Int     @id @default(autoincrement())
+  name       String
+  order      Order[]
+  decription String
+  discount   Decimal
 
-    @@map("coupons")
+  @@map("coupons")
 }
 
 model Product {
-    id          Int            @id @default(autoincrement())
-    name        String
-    description String         @db.Text
-    price       Decimal
-    categories  Category[]
-    inventory   Int            @db.UnsignedInt
-    images      ProductImage[]
-    orders      ProductOrder[]
+  id          Int            @id @default(autoincrement())
+  name        String
+  description String         @db.Text
+  price       Decimal
+  categories  Category[]
+  inventory   Int
+  images      ProductImage[]
+  orders      ProductOrder[]
 
-    @@map("products")
+  @@map("products")
 }
 
 model ProductOrder {
-    quantity  Int
-    discount  Decimal?
-    order     Order    @relation(fields: [orderId], references: [id])
-    orderId   Int
-    product   Product  @relation(fields: [productId], references: [id])
-    productId Int
+  quantity  Int
+  discount  Decimal?
+  order     Order    @relation(fields: [orderId], references: [id])
+  orderId   Int
+  product   Product  @relation(fields: [productId], references: [id])
+  productId Int
 
-    @@id([orderId, productId])
-    @@map("productOders")
+  @@id([orderId, productId])
+  @@map("productOders")
 }
 
 model Category {
-    id          Int       @id @default(autoincrement())
-    name        String    @unique
-    description String?
-    products    Product[]
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  description String?
+  products    Product[]
 
-    @@map("categories")
+  @@map("categories")
 }
 
 model ProductImage {
-    id        Int     @id @default(autoincrement())
-    link      String  @unique
-    product   Product @relation(fields: [productId], references: [id])
-    productId Int
+  id        Int     @id @default(autoincrement())
+  link      String  @unique
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
 
-    @@map("productImages")
+  @@map("productImages")
 }
