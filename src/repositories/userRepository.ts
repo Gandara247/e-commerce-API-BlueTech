@@ -56,7 +56,7 @@ export default class User {
             data: {
                 name,
                 email,
-                password: await bcrypt.hash(password, 10),
+                password: await bcrypt.hash(password, 8),
                 role,
             }
         });
@@ -82,7 +82,7 @@ export default class User {
             where: { email },
             data: {
                 name,
-                password: password ? await bcrypt.hash(password, 10) : undefined,
+                password: password ? await bcrypt.hash(password, 8) : undefined,
             }
         })
 
