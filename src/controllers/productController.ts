@@ -16,7 +16,7 @@ export default class productController {
     static async fetchProductById(req: Request, res: Response, next: NextFunction) {
         try {
             const { id } = req.params;
-            const product = await Product.fetchProductId(parseInt(id));
+            const product = await Product.fetchProductId(Number(id));
             if (!product) { throw new apiError(404, "🔎 Product not found for this ID.") };
             return res.status(200).json(product);
         } catch (error) {
