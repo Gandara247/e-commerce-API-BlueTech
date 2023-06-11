@@ -16,9 +16,10 @@ model User {
   email       String   @unique
   password    String
   role        Role
-  Orders      Order[]
+  orders      Order[]
   createde_at DateTime @default(now())
   updatede_at DateTime @updatedAt
+  cart        Cart?
 
   @@map("users")
 }
@@ -41,11 +42,11 @@ model Order {
 }
 
 model Coupon {
-  id         Int     @id @default(autoincrement())
-  name       String
-  order      Order[]
-  decription String
-  discount   Decimal
+  id          Int     @id @default(autoincrement())
+  name        String
+  Order       Order[]
+  description String
+  discount    Decimal
 
   @@map("coupons")
 }
@@ -59,6 +60,7 @@ model Product {
   inventory   Int            @db.UnsignedInt
   images      ProductImage[]
   orders      ProductOrder[]
+  carts       ProductCart[]
 
   @@map("products")
 }
@@ -91,4 +93,24 @@ model ProductImage {
   productId Int
 
   @@map("productImages")
+}
+
+model Cart {
+  id          Int           @id @default(autoincrement())
+  user        User          @relation(fields: [userId], references: [id])
+  userId      Int           @unique
+  products    ProductCart[]
+  createde_at DateTime      @default(now())
+  updatede_at DateTime      @updatedAt
+
+  @@map("carts")
+}
+
+model ProductCart {
+  id        Int     @id @default(autoincrement())
+  quantity  Int
+  productId Int
+  cartId    Int
+  product   Product @relation(fields: [productId], references: [id])
+  cart      Cart    @relation(fields: [cartId], references: [id])
 }
