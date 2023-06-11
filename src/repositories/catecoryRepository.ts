@@ -1,6 +1,6 @@
 import { prisma } from "../database/db";
 
-export default class Catefory {
+export default class Category {
     static async fetchAll() {
         return await prisma.category.findMany()
     }
