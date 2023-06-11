@@ -7,6 +7,7 @@ import productRoutes from "./routes/products/productRoutes";
 
 routes.use(userRoutes)
 routes.use(productRoutes)
+routes.use(categoryRoutes);
 
 routes.get("/", async(req, res) =>{
     return res.sendStatus(200).json({"msg":"👌🏿 Application runnig successfully!" });
