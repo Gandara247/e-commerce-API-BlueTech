@@ -2,13 +2,15 @@ import { Router } from "express";
 import userRoutes from "./routes/user/userRoutes";
 import productRoutes from "./routes/products/productRoutes";
 import categoryRoutes from "./routes/categories/categoryRoutes";
+import cartRoutes from "./routes/cart/cartRoutes";
 
 
  const routes = Router();
 
-routes.use(userRoutes)
-routes.use(productRoutes)
+routes.use(userRoutes);
+routes.use(productRoutes);
 routes.use(categoryRoutes);
+routes.use(cartRoutes);
 
 routes.get("/", async(req, res) =>{
     return res.sendStatus(200).json({"msg":"👌🏿 Application runnig successfully!" });
