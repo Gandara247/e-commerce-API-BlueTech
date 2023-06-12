@@ -4,7 +4,7 @@ import apiError from "../utils/api/apiError";
 import { Request, Response, NextFunction } from "express";
 
 export default class CartController {
-    static async addToCart(req: Request, res: Response, next: NewableFunction) {
+    static async addToCart(req: Request, res: Response, next: NextFunction) {
         try {
             const { userEmail, productId, quantity } = req.body;
             const user = await prisma.user.findUnique({
