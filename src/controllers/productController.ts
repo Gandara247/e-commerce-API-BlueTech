@@ -94,7 +94,7 @@ export default class productController {
         try {
             const id = parseInt(req.params.id);
             const images = await storeImages(req.files as Array<Express.Multer.File>);
-            console.log(images, "👨🏿‍💻");
+            
             
             const image = await ProductRepository.newImage(id, images);
             console.log(images);
