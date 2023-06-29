@@ -1,14 +1,13 @@
 import { NextFunction, Response, Request } from "express";
-import apiError from "../utils/api/apiError";
-import Product from "../repositories/productsRepository";
 import ProductRepository from "../repositories/productsRepository";
 import storeImages from "../utils/storeImages";
+
 
 export default class productController {
 
 	static async listProducts(req: Request, res: Response, next: NextFunction) {
 		try {
-			const products = await Product.fetchProducts();
+			const products = await ProductRepository.fetchProducts();
 			return res.status(200).json(products);
 		} catch (error) {
 			next(error);
@@ -35,42 +34,22 @@ export default class productController {
             next(error)
         }
     }
-
-    // static async listProductsByPage(req: Request, res: Response, next: NextFunction) {
-    //     try {
-    //         const { id } = req.params;
-    //         const products = await Product.fetchProductsByPage(Number(id));
-    //         return res.status(200).json(products);
-    //     } catch (error) {
-    //         next(error);
-    //     }
-    // }
-
-    // static async fetchProductById(req: Request, res: Response, next: NextFunction) {
-    //     try {
-    //         const { id } = req.params;
-    //         const product = await Product.fetchProductId(Number(id));
-    //         if (!product) { throw new apiError(404, "🔎 Product not found for this ID.") };
-    //         return res.status(200).json(product);
-    //     } catch (error) {
-    //         next(error);
-    //     }
-    // }
+  
 
     static async createProduct(req: Request, res: Response, next: NextFunction) {
         try {
-            const { name, description, price, inventory, categories } = req.body.data;
-            let images: string[] | undefined = undefined;
-            if(req.files) {
-                images = storeImages(req.files as Array<Express.Multer.File>);
-            }
+            const { name, description, price, inventory, categories } = req.body;
+            // let images: string[] | undefined = undefined;
+            // if(req.files) {
+            //     images = await storeImages(req.files as Array<Express.Multer.File>);
+            // }
             const product = await ProductRepository.createProduct({
                 name,
                 description,
                 price,
                 inventory,
                 categories,
-                images,
+                // images,
             });
             return res.status(201).json(product)
         } catch (error) {
@@ -83,7 +62,7 @@ export default class productController {
             const id = parseInt(req.params.id);
             let images: string[] | undefined = undefined;
             if(req.files) {
-                images = storeImages(req.files as Array<Express.Multer.File>);
+                images = await storeImages(req.files as Array<Express.Multer.File>);
             }
             const { name, description, price, inventory, categories} = req.body.data;
             const product = await ProductRepository.updateProduct({
@@ -114,8 +93,12 @@ export default class productController {
     static async newImage(req: Request, res: Response, next: NextFunction) {
         try {
             const id = parseInt(req.params.id);
-            const images = storeImages(req.files as Array<Express.Multer.File>);
+            const images = await storeImages(req.files as Array<Express.Multer.File>);
+            console.log(images, "👨🏿‍💻");
+            
             const image = await ProductRepository.newImage(id, images);
+            console.log(images);
+            
             return res.status(201).json(image);
         }catch(error) {
             next(error);
@@ -127,7 +110,7 @@ export default class productController {
          {
             const id = parseInt(req.params.id);
             await ProductRepository.deleteImage(id);
-            return res.sendStatus(204);
+            return res.send(204);
          }catch(error) {
             next(error);
          }

@@ -12,16 +12,15 @@ export const productSchemas = {
     }),
   },
   newProduct: {
-    body: object({
-      data: object({
+    body: object({      
         name: string().required(),
         description: string().required(),
         price: number().required(),
         category: array().of(string()),
-        inventory: number().required(),
-      }),
+        inventory: number().required(),      
     }),
   },
+  
   updateProduct: {
     params: object({
       id: number().required(),

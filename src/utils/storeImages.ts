@@ -1,26 +1,32 @@
-import { format } from "util";
+import env from "./dotEnvConfig/dotEnvConfig";
 import { storage } from "../uploads/storage";
 import apiError from "./api/apiError";
-import env from "./dotEnvConfig/dotEnvConfig";
+import { format } from "util";
+import upload from "../uploads/uploads";
+
+
+
 
 const bucket = storage.bucket(env.GCLOUD_STORAGE_BUCKET);
 
-export default function storeImages(files: Array<Express.Multer.File>) {
+export default async function storeImages(files: Array<Express.Multer.File>) {
   let images: string[] = [];
-  if (!files) throw new apiError(400, "Nenhuma imagem enviada.");
+  if (!files) throw new apiError(400, "No image uploaded!");
   for (const image of files) {
-    const blob = bucket.file(image.filename);
+    const blob = bucket.file(image.originalname);
     const blobStream = blob.createWriteStream();
     blobStream.on("error", (error) => {
       throw error;
     });
     blobStream.on("finish", () => {
-      const publicUrl = format(
-        `https://storage.googleapis.com/${bucket.name}/${blob.name}`,
-      );
-      images.push(publicUrl);
+      // // const publicUrl = format(`https://storage.googleapis.com/${bucket.name}/${blob.name}`);
+      // // images.push(publicUrl);
+      // console.log(images);
+
     });
     blobStream.end(image.buffer);
+    const publicUrl = format(`https://storage.googleapis.com/${bucket.name}/${blob.name}`);
+    images.push(publicUrl);
   }
   return images;
-}
+};
