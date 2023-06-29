@@ -8,7 +8,7 @@ import cors from "cors";
 
 const api = express()
 api.use(cors({
-    origin: ["http://localhost:3000", "https://e-commerce-api-bluetech-production.up.railway.app"],
+    origin: ["http://localhost:3000", "https://e-commerce-api-bluetech-production.up.railway.app/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
