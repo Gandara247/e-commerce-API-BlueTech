@@ -5,7 +5,7 @@
   "main": "src/index",
   "scripts": {
     "test": "jest",
-    "start": "node build/src/index.js"
+    "start": "ts-node-dev src/."
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
