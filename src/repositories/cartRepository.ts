@@ -12,9 +12,9 @@ interface ProductCartInput {
 }
 
 export default class CartRepository {
-    static async cartWichProducts(cartId: number) {
+    static async cartWichProducts(userId: number) {
         return await prisma.cart.findUnique({
-            where: { id: cartId },
+            where: { id: userId },
             include: { products: true },
         });
     }

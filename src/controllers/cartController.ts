@@ -33,8 +33,8 @@ export default class CartController {
 
     static async fetchCartWithProducts(req: Request, res: Response, next: NextFunction) {
         try {
-            const { cartId } = req.params;
-            const cart = await CartRepository.cartWichProducts(parseInt(cartId));
+            const { userId } = req.params;
+            const cart = await CartRepository.cartWichProducts(parseInt(userId));
 
             if (!cart) {
                 throw new apiError(404, "Cart not Found.");

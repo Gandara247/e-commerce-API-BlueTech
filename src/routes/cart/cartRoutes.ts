@@ -6,7 +6,7 @@ import CartController from "../../controllers/cartController";
 
 const cartRoutes = Router();
 
-cartRoutes.get("/cart/:cartId", Authentication.authClient, CartController.fetchCartWithProducts);
+cartRoutes.get("/cart/:userId", Authentication.authClient, CartController.fetchCartWithProducts);
 cartRoutes.post("/cart/add", Authentication.authClient, validateDto(addProduct), CartController.addToCart);
 cartRoutes.post("/cart/remove", Authentication.authClient, validateDto(removeProduct), CartController.removeFromCart);
 
