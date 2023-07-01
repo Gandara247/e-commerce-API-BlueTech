@@ -37,6 +37,7 @@ export default class userController {
                 name: user.name,
                 email: user.email,
                 role: user.role,
+                id: user.id,
                 token
             });
                         
