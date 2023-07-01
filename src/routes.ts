@@ -15,7 +15,7 @@ routes.use(cartRoutes);
 routes.use(orderRoutes);
 
 routes.get("/", async(req, res) =>{
-    return res.sendStatus(200).json({"msg":"👌🏿 Application runnig successfully!" });
+    return res.status(200).json({"msg":"👌🏿 Application runnig successfully!" });
 });
 
 export default routes;
