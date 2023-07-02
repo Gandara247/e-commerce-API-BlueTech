@@ -7,6 +7,8 @@ const env: { [key: string]: string } = {
     JWTSECRET: <string>process.env.JWTSECRET,
     JWTREFRESHSECRET: <string>process.env.JWTREFRESHSECRET,
     GCLOUD_STORAGE_BUCKET: <string> process.env.GCLOUD_STORAGE_BUCKET,
+    GCLOUD_PROJECT_ID: <string> process.env.GCLOUD_PROJECT_ID,
+
 };
 
 for (const property in env) {
