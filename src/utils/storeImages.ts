@@ -2,10 +2,6 @@ import env from "./dotEnvConfig/dotEnvConfig";
 import { storage } from "../uploads/storage";
 import apiError from "./api/apiError";
 import { format } from "util";
-import upload from "../uploads/uploads";
-
-
-
 
 const bucket = storage.bucket(env.GCLOUD_STORAGE_BUCKET);
 
@@ -19,9 +15,9 @@ export default async function storeImages(files: Array<Express.Multer.File>) {
       throw error;
     });
     blobStream.on("finish", () => {
-      // // const publicUrl = format(`https://storage.googleapis.com/${bucket.name}/${blob.name}`);
-      // // images.push(publicUrl);
-      // console.log(images);
+      const publicUrl = format(`https://storage.googleapis.com/${bucket.name}/${blob.name}`);
+      images.push(publicUrl);
+      console.log(images);
 
     });
     blobStream.end(image.buffer);
