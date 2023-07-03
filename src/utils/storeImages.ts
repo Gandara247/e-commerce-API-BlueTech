@@ -43,4 +43,9 @@ export default async function storeImages(files: Array<Express.Multer.File>) {
   return images;
 }
 
-getSecret();
+async function main() {
+  await getSecret();
+ 
+}
+
+main();

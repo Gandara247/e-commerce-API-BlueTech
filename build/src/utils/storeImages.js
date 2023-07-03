@@ -59,4 +59,9 @@ function storeImages(files) {
     });
 }
 exports.default = storeImages;
-getSecret();
+function main() {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield getSecret();
+    });
+}
+main();
