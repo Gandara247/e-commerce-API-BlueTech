@@ -5,7 +5,9 @@
   "main": "src/index",
   "scripts": {
     "test": "tsc && jest",
-    "start": "ts-node-dev src/."
+    "migrate": "prisma migrate dev",
+    "start": "ts-node-dev src/.",
+    "dev": "concurrently \"tsc -w\" \"node --watch build/index.js\""
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
