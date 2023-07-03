@@ -4,18 +4,16 @@ import apiError from "./api/apiError";
 import { Storage } from '@google-cloud/storage';
 import { format } from 'util';
 
-
-let storage: Storage;
+const credentials = JSON.parse(env.GOOGLE_CREDENTIALS);
+const client = new SecretManagerServiceClient({ credentials });
+const storage = new Storage({ credentials });
 let bucket: any;
 
 async function getSecret() {
-  const client = new SecretManagerServiceClient();
-  const name = 'projects/third-zephyr-391506/secrets/gandarasecret/versions/latest';
+  const name = 'projects/311537062777/secrets/gandarasecret/versions/latest';
   const [version] = await client.accessSecretVersion({ name });
   if (version.payload && version.payload.data) {
     const secretValue = version.payload.data.toString();
-    const credentials = JSON.parse(secretValue);
-    storage = new Storage({ credentials });
     bucket = storage.bucket(env.GCLOUD_STORAGE_BUCKET);
   } else {
     console.log('Não foi possível acessar o valor do segredo');
@@ -45,7 +43,7 @@ export default async function storeImages(files: Array<Express.Multer.File>) {
 
 async function main() {
   await getSecret();
- 
+  // call storeImages function here
 }
 
 main();

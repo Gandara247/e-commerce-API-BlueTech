@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "third-zephyr-391506",
+    "private_key_id": "b9c6c149628c6993fbeaee64458713da0bcd75e0",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDLZ4r3B2A/QPqT\nTebloo6Roqa+ZUgZbLc0MLhzN/3wu904Jn8b1gxVHel6QyiWBzn9KE2lWPKgOWp2\nzGF0dZUzl2d5bksmenPadQMpai9wez6dak9KlyfHsfSrJe+LXPsTQ/IDsk/jF3Xe\niYaNIEkvAs8PxaSII60AQY9gsITDtIuiqdmn9uB5JJfcTpSlxnRMmJRb3pET4X2B\nrnZudycsjfuyzXPYkJlBZjBlQ2Yij32qJiRPk3K06+hcmFziTo0YLLDsErqsqy8I\nDNtLPxRugeMNcxs6oDpPCddjEXPt9MO+ZCeo5f2Y9bGNgP3I1wc59RdB3yGXYMm5\nfjOAySQVAgMBAAECggEAQ1PhtsUVQbrDdpDZtfcp0+EP6oPh6rCGr9rUoybMgqvc\nnOJ5PoCKkn4VM2gZfhekRTza/rlDjm+S4wHh3EezfGFIWfR9IZ50zMHgqwu/6i6R\nWk+/MUR5YWtxPlmPQgUkAouCB2E1ekjgtim1hO9D6jC201SrknikoioRSIMFXzXD\noIW8zqgRc37CRN9lukXlSqf65aYH00d4Ihg6Z1fQc9q3739iAiVCJoa/3FEtdejo\nShGba60KZ03TZcbNpAWYGDz7xWkKof/QotadQVs1iYDm87JNTINfg6bh/MbNeGCN\n7p+A8o/nM/2RASCChuWDWQ9euIUip2eOg8krizFi/QKBgQDwdI5nYUkHyfhtXXw2\nx1yhKmi6oaeAU6f2NFLiFs/4T1UAUni0l5jVMmr2oPOhcKTUa+nfEQC3PZZLwftZ\n/B+rJWovmj1T3FqmAxEWYZABZ7tGvkCA0FMLbtFWJSUK1ZwaJTyE5GabvGrcwrTu\nhE+Sj85ljwFxJwH1L/PyZZXbywKBgQDYjc8yKw3n14qZyJgP/F5uGSrvStNveWQy\nO84pZQVkqD7lkL84z2ExX8XAJP9AoOUr2HPiDacEcJHZB60aX5zzFdrr4OBRK44R\n9n0klY+B/rvv45rFYpBatGMQTFK/CjtkayAotWfjoINceO1dw2/i2yP+iV0IPn8q\ngPnpcZ7DnwKBgCfljwNENxPdxSSQUF3eclYjbUEaNWqrdsD5KY9t7Y/rydTF2lVM\nmgU12l2VkxcEU7UTOrjSX2YIB/oF86iYlsCU8qt3UhmqBDhrZdhq07QH/CDezGET\nL9RDzOQYQa8shjwoVYRPSV8pwili/RZeSb2tsrdTJRAbQs3l6PodNOJFAoGBAJGX\nPa7v7UhqzB86EqnktSP2PbxlpSM0DN4NAT0pUufqiWbT2wv5uNF2H0BgX0/3HDxP\nKRHYteoxOI0eMQ4jLCTuE6I0LPvFeZ2wB1C6UKJIPdg5QIvmCUFCN7v0ZElWOrn3\nn8Zet/r8pnRcRNGeHLH7PQbbGTX6too/7kU5g1DnAoGAHcB2mfIWdaLgRscnwL+9\nwPPcdECYYpnz3SmDVZ0bhu/wWo51ID8sAhOpI3OvJnvrWcbcoPjjFROvXorhwvrO\ntZEx7QAwxqTAOXi7Cw/mbhfzNf2uLGY/TW1NjC3OOQoYdxEQnDY1kvF13SYezG3O\nm8o69vVn/YVkTGWmJEODH64=\n-----END PRIVATE KEY-----\n",
+    "client_email": "bluetechserviceaccountlola@third-zephyr-391506.iam.gserviceaccount.com",
+    "client_id": "103665514797515939077",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bluetechserviceaccountlola%40third-zephyr-391506.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
