@@ -8,17 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const dotEnvConfig_1 = __importDefault(require("./dotEnvConfig/dotEnvConfig"));
 const secret_manager_1 = require("@google-cloud/secret-manager");
-const apiError_1 = __importDefault(require("./api/apiError"));
 const storage_1 = require("@google-cloud/storage");
-const util_1 = require("util");
-let storage;
-let bucket;
 function getSecret() {
     return __awaiter(this, void 0, void 0, function* () {
         const client = new secret_manager_1.SecretManagerServiceClient();
@@ -27,36 +19,21 @@ function getSecret() {
         if (version.payload && version.payload.data) {
             const secretValue = version.payload.data.toString();
             const credentials = JSON.parse(secretValue);
-            storage = new storage_1.Storage({ credentials });
-            bucket = storage.bucket(dotEnvConfig_1.default.GCLOUD_STORAGE_BUCKET);
+            const storage = new storage_1.Storage({ credentials });
+            function listBuckets() {
+                return __awaiter(this, void 0, void 0, function* () {
+                    const [buckets] = yield storage.getBuckets();
+                    console.log('Buckets:');
+                    buckets.forEach(bucket => {
+                        console.log(bucket.name);
+                    });
+                });
+            }
+            listBuckets();
         }
         else {
             console.log('Não foi possível acessar o valor do segredo');
         }
     });
 }
-function storeImages(files) {
-    return __awaiter(this, void 0, void 0, function* () {
-        let images = [];
-        if (!files)
-            throw new apiError_1.default(400, "No image uploaded!");
-        for (const image of files) {
-            const blob = bucket.file(image.originalname);
-            const blobStream = blob.createWriteStream();
-            blobStream.on('error', (error) => {
-                throw error;
-            });
-            blobStream.on('finish', () => {
-                const publicUrl = (0, util_1.format)(`https://storage.googleapis.com/${bucket.name}/${blob.name}`);
-                images.push(publicUrl);
-                console.log(images);
-            });
-            blobStream.end(image.buffer);
-            const publicUrl = (0, util_1.format)(`https://storage.googleapis.com/${bucket.name}/${blob.name}`);
-            images.push(publicUrl);
-        }
-        return images;
-    });
-}
-exports.default = storeImages;
 getSecret();
