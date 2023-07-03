@@ -12,19 +12,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-const userRoutes_1 = __importDefault(require("./routes/user/userRoutes"));
-const productRoutes_1 = __importDefault(require("./routes/products/productRoutes"));
-const categoryRoutes_1 = __importDefault(require("./routes/categories/categoryRoutes"));
-const cartRoutes_1 = __importDefault(require("./routes/cart/cartRoutes"));
-const orderRoutes_1 = __importDefault(require("./routes/orders/orderRoutes"));
-const routes = (0, express_1.Router)();
-routes.use(userRoutes_1.default);
-routes.use(productRoutes_1.default);
-routes.use(categoryRoutes_1.default);
-routes.use(cartRoutes_1.default);
-routes.use(orderRoutes_1.default);
-routes.get("/health", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    return res.status(200).json({ "msg": "👌🏿 Application runnig successfully!" });
-}));
-exports.default = routes;
+const storage_1 = require("@google-cloud/storage");
+const dotEnvConfig_1 = __importDefault(require("./utils/dotEnvConfig/dotEnvConfig"));
+const projectId = (dotEnvConfig_1.default.GCLOUD_PROJECT_ID);
+function authenticateImplicitWithAdc() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const storage = new storage_1.Storage({
+            projectId,
+        });
+        const [buckets] = yield storage.getBuckets();
+        console.log('Buckets:');
+        for (const bucket of buckets) {
+            console.log(`- ${bucket.name}`);
+        }
+        console.log('Listed all storage buckets.');
+    });
+}
+authenticateImplicitWithAdc();

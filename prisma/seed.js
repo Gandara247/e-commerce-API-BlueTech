@@ -12,19 +12,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-const userRoutes_1 = __importDefault(require("./routes/user/userRoutes"));
-const productRoutes_1 = __importDefault(require("./routes/products/productRoutes"));
-const categoryRoutes_1 = __importDefault(require("./routes/categories/categoryRoutes"));
-const cartRoutes_1 = __importDefault(require("./routes/cart/cartRoutes"));
-const orderRoutes_1 = __importDefault(require("./routes/orders/orderRoutes"));
-const routes = (0, express_1.Router)();
-routes.use(userRoutes_1.default);
-routes.use(productRoutes_1.default);
-routes.use(categoryRoutes_1.default);
-routes.use(cartRoutes_1.default);
-routes.use(orderRoutes_1.default);
-routes.get("/health", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    return res.status(200).json({ "msg": "👌🏿 Application runnig successfully!" });
+const bcrypt_1 = __importDefault(require("bcrypt"));
+const db_1 = require("../src/database/db");
+function main() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const salt = bcrypt_1.default.genSaltSync(8);
+        yield db_1.prisma.user.upsert({
+            where: { id: 1 },
+            update: {},
+            create: {
+                id: 1,
+                name: "joao cunha",
+                email: "joao@gmail.com",
+                password: bcrypt_1.default.hashSync("12345678", salt),
+                role: "admin"
+            },
+        });
+    });
+}
+;
+main()
+    .then(() => __awaiter(void 0, void 0, void 0, function* () {
+    yield db_1.prisma.$disconnect();
+}))
+    .catch((e) => __awaiter(void 0, void 0, void 0, function* () {
+    console.error(e);
+    yield db_1.prisma.$disconnect();
 }));
-exports.default = routes;

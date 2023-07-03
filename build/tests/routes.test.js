@@ -12,19 +12,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-const userRoutes_1 = __importDefault(require("./routes/user/userRoutes"));
-const productRoutes_1 = __importDefault(require("./routes/products/productRoutes"));
-const categoryRoutes_1 = __importDefault(require("./routes/categories/categoryRoutes"));
-const cartRoutes_1 = __importDefault(require("./routes/cart/cartRoutes"));
-const orderRoutes_1 = __importDefault(require("./routes/orders/orderRoutes"));
-const routes = (0, express_1.Router)();
-routes.use(userRoutes_1.default);
-routes.use(productRoutes_1.default);
-routes.use(categoryRoutes_1.default);
-routes.use(cartRoutes_1.default);
-routes.use(orderRoutes_1.default);
-routes.get("/health", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    return res.status(200).json({ "msg": "👌🏿 Application runnig successfully!" });
-}));
-exports.default = routes;
+const supertest_1 = __importDefault(require("supertest"));
+const node_test_1 = require("node:test");
+const api_1 = __importDefault(require("../utils/api/api"));
+(0, node_test_1.describe)("Health check Route", () => {
+    test("request /health", () => __awaiter(void 0, void 0, void 0, function* () {
+        const res = yield (0, supertest_1.default)(api_1.default).get("/health");
+        expect(res.status).toBe(200);
+    }));
+});

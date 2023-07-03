@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const productController_1 = __importDefault(require("../../controllers/productController"));
+const validateDTO_1 = __importDefault(require("../../middlewares/validateDTO/validateDTO"));
+const productSchema_1 = require("../../middlewares/schemas/productSchema");
+const authentication_1 = __importDefault(require("../../middlewares/authentication/authentication"));
+const uploads_1 = __importDefault(require("../../uploads/uploads"));
+const productRoutes = (0, express_1.Router)();
+productRoutes.get("/products", productController_1.default.listProducts);
+productRoutes.get("/products/search/:keyword", (0, validateDTO_1.default)(productSchema_1.productSchemas.search), productController_1.default.searchProduct);
+productRoutes.get("/products/:category", (0, validateDTO_1.default)(productSchema_1.productSchemas.findBycategory), productController_1.default.fetchByCategory);
+productRoutes.post("/products", authentication_1.default.authAdmin, uploads_1.default.array("images"), (0, validateDTO_1.default)(productSchema_1.productSchemas.newProduct), productController_1.default.createProduct);
+productRoutes.put("/products/:id", authentication_1.default.authAdmin, uploads_1.default.array("images"), (0, validateDTO_1.default)(productSchema_1.productSchemas.updateProduct), productController_1.default.updateProduct);
+productRoutes.post("/products/:id/images", authentication_1.default.authAdmin, (0, validateDTO_1.default)(productSchema_1.productSchemas.onlyIdRequired), uploads_1.default.array("images"), productController_1.default.newImage);
+productRoutes.delete("/products/images/:id", authentication_1.default.authAdmin, (0, validateDTO_1.default)(productSchema_1.productSchemas.onlyIdRequired), productController_1.default.deleteImage);
+productRoutes.delete("/products/:id", authentication_1.default.authAdmin, (0, validateDTO_1.default)(productSchema_1.productSchemas.onlyIdRequired), productController_1.default.deleteProduct);
+exports.default = productRoutes;

@@ -14,7 +14,7 @@ routes.use(categoryRoutes);
 routes.use(cartRoutes);
 routes.use(orderRoutes);
 
-routes.get("/", async(req, res) =>{
+routes.get("/health", async(req, res) =>{
     return res.status(200).json({"msg":"👌🏿 Application runnig successfully!" });
 });
 
