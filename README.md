@@ -21,7 +21,7 @@
 </a>
 </br></br></br>
 
-[[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Blue_tech&uri=https%3A%2F%2Fraw.githubusercontent.com%2FGandara247%2Fe-commerce-API-BlueTech%2Fmain%2Fdocs%2Fexport.json)](https://github.com/Gandara247/e-commerce-API-BlueTech/edit/main/README.md)
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=bluetechapi&uri=https%3A%2F%2Fraw.githubusercontent.com%2FGandara247%2Fe-commerce-API-BlueTech%2Fmain%2Fdocs%2Finsomnia.json)
 </br></br>
 
 <a href="">
