@@ -205,12 +205,8 @@ Haverá uma página na qual o cliente poderá visualizar e alterar seus dados pe
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" width="52" alt="html5 logo" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" width="52" alt="css logo"  />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" **width**="52" alt="bootstrap logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" width="52" alt="react logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" width="52" alt="bootstrap logo"  />
-</br></br><hr>
-
- 
-          
-          
-
+</br></br><hr>     
+        
 ### Dependências</br>
 
 - [Prisma](https://www.prisma.io/)
@@ -222,9 +218,6 @@ Haverá uma página na qual o cliente poderá visualizar e alterar seus dados pe
 - [multer](https://www.npmjs.com/package/multer)
 </br></br>
 <hr></br>
-
-
-
 
 ## <p align="center">Autores:</p></br>
 
