@@ -189,8 +189,8 @@ Haverá uma página na qual o cliente poderá visualizar e alterar seus dados pe
 - [TypeScript](https://www.typescriptlang.org/) 
 - [Google Cloud](https://cloud.google.com/?hl=pt-br)</br>
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons//nodejs/nodejs-original.svg" height="40" width="52" alt="node logo"  /><img src="https://devicon-website.vercel.app/api/express/original.svg?color=%2303FFD9" height="50" width="80" alt="node logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" height="40" width="52" alt="jest logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/babel/babel-original.svg" height="40" width="52" alt="babel logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40" width="52" alt="mysql logo"  />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" width="52" alt="typescript logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" height="50" width="80" alt="node logo" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons//nodejs/nodejs-original.svg" height="40" width="52" alt="node logo"  /><img src="https://devicon-website.vercel.app/api/express/original.svg?color=%2303FFD9" height="50" width="80" alt="node logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" height="40" width="52" alt="jest logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/babel/babel-original.svg" height="40" width="52" alt="babel logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40" width="52" alt="mysql logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" width="52" alt="typescript logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" height="50" width="80" alt="node logo" />
+
 </br></br><hr>
 
 ### Front End
