@@ -13,11 +13,11 @@
 </a>
   
 <a href="https://github.com/r-f-s-neto/bluetech">
-    <img src="./images/forReadme/front_rep.svg" alt="Documentação API" width="300" height="" >
+    <img src="./images/forReadme/front_rep.svg" alt="Documentação API" width="250" height="" >
 </a><a href="https://github.com/r-f-s-neto/bluetech">
     <img src="./images/forReadme/site_blue_tech.svg" alt="Documentação API" width="300" height="" >
 </a><a href="https://gandara247.github.io/e-commerce-API-BlueTech/">
-    <img src="./images/forReadme/api_doc.svg" alt="Documentação API" width="300" height="">
+    <img src="./images/forReadme/api_doc.svg" alt="Documentação API" width="250" height="">
 </a>
 </br></br></br>
 
