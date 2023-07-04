@@ -194,19 +194,17 @@ Haverá uma página na qual o cliente poderá visualizar e alterar seus dados pe
 </br></br><hr>
 
 ### Front End
-
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://www.w3schools.com/css/default.asp)
 - [BOOTSTRAP](https://getbootstrap.com/docs/3.4/css/)
 - [REACT](https://legacy.reactjs.org/docs/getting-started.html)
 - [TypeScript](https://www.typescriptlang.org/)</br>
-
-
+  
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" width="52" alt="html5 logo" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" width="52" alt="css logo"  />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" **width**="52" alt="bootstrap logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" width="52" alt="react logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" width="52" alt="bootstrap logo"  />
-</br></br><hr>     
-        
+
+</br></br><hr>             
 ### Dependências</br>
 
 - [Prisma](https://www.prisma.io/)
