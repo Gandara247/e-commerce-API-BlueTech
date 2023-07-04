@@ -204,7 +204,12 @@ Haverá uma página na qual o cliente poderá visualizar e alterar seus dados pe
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" width="52" alt="css logo"  />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" width="52" alt="bootstrap logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" width="52" alt="react logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" width="52" alt="bootstrap logo"  />
 
-</br></br><hr>             
+</br></br>
+
+<a href="">
+    <img src="./images/forReadme/linha%20neon.png" alt="Documentação API" width="1080" height="100">
+</a>
+
 ### Dependências</br>
 
 - [Prisma](https://www.prisma.io/)
@@ -215,7 +220,10 @@ Haverá uma página na qual o cliente poderá visualizar e alterar seus dados pe
 - [cookie-parser](https://www.npmjs.com/package/@types/body-parser)
 - [multer](https://www.npmjs.com/package/multer)
 </br></br>
-<hr></br>
+
+<a href="">
+    <img src="./images/forReadme/linha%20neon.png" alt="Documentação API" width="1080" height="100">
+</a>
 
 ## <p align="center">Autores:</p></br>
 
@@ -232,7 +240,9 @@ Haverá uma página na qual o cliente poderá visualizar e alterar seus dados pe
 - ### Tiago Jesus | 5282XP49</br>
 - ### Neylor Chaves | 5376XP49</br>
   
-
+<a href="">
+    <img src="./images/forReadme/linha%20neon.png" alt="Documentação API" width="1080" height="100">
+</a>
 
 
 
