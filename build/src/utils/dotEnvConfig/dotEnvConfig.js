@@ -32,6 +32,7 @@ const env = {
     JWTREFRESHSECRET: process.env.JWTREFRESHSECRET,
     GCLOUD_STORAGE_BUCKET: process.env.GCLOUD_STORAGE_BUCKET,
     GCLOUD_PROJECT_ID: process.env.GCLOUD_PROJECT_ID,
+    GOOGLE_CREDENTIALS: process.env.GOOGLE_CREDENTIALS
 };
 for (const property in env) {
     if (!env[property])

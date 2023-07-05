@@ -17,17 +17,16 @@ const secret_manager_1 = require("@google-cloud/secret-manager");
 const apiError_1 = __importDefault(require("./api/apiError"));
 const storage_1 = require("@google-cloud/storage");
 const util_1 = require("util");
-let storage;
+const credentials = JSON.parse(dotEnvConfig_1.default.GOOGLE_CREDENTIALS);
+const client = new secret_manager_1.SecretManagerServiceClient({ credentials });
+const storage = new storage_1.Storage({ credentials });
 let bucket;
 function getSecret() {
     return __awaiter(this, void 0, void 0, function* () {
-        const client = new secret_manager_1.SecretManagerServiceClient();
-        const name = 'projects/third-zephyr-391506/secrets/gandarasecret/versions/latest';
+        const name = 'projects/311537062777/secrets/gandarasecret/versions/latest';
         const [version] = yield client.accessSecretVersion({ name });
         if (version.payload && version.payload.data) {
             const secretValue = version.payload.data.toString();
-            const credentials = JSON.parse(secretValue);
-            storage = new storage_1.Storage({ credentials });
             bucket = storage.bucket(dotEnvConfig_1.default.GCLOUD_STORAGE_BUCKET);
         }
         else {
@@ -62,6 +61,7 @@ exports.default = storeImages;
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         yield getSecret();
+        // call storeImages function here
     });
 }
 main();
