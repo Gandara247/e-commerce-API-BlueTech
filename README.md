@@ -52,6 +52,7 @@
   - [Stacks](#stacks)
     - [Back End](#back-end)
     - [Front End](#front-end)
+    - [Animação:](#animação)
     - [Dependências](#dependências)
   - [Autores:](#autores)
   - [Back End:](#back-end-1)
@@ -203,6 +204,20 @@ Haverá uma página na qual o cliente poderá visualizar e alterar seus dados pe
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" width="52" alt="html5 logo" /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" width="52" alt="css logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" width="52" alt="bootstrap logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" width="52" alt="react logo"  /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" width="52" alt="bootstrap logo"  />
 
 </br></br>
+
+### Animação:</br>
+- [Adobe After Effects](https://www.adobe.com/products/aftereffects.html)
+- [Adobe Illustrator](https://www.adobe.com/br/products/illustrator.html)
+- [Adobe Photoshop](https://www.adobe.com/products/photoshop.html)</br>
+
+
+
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-plain.svg" height="80" width="60" alt="Adobe After Effects logo" /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" height="80" width="60" alt="Adobe Illustrator logo" /><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" height="80" width="60" alt="Adobe Photoshop logo"/>
+          
+          
+          
+          
 
 <a href="">
     <img src="./images/forReadme/linha%20neon.png" alt="Documentação API" width="1080" height="100">
