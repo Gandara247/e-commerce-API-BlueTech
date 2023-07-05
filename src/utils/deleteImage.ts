@@ -1,4 +1,5 @@
-import { storage } from "../uploads/storage";
+import { storage } from "./storeImages";
+
 import env from "./dotEnvConfig/dotEnvConfig";
 
 export default async function deleteImage(fileName: string) {

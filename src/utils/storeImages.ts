@@ -47,3 +47,6 @@ async function main() {
 }
 
 main();
+
+export { storage };
+
