@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.storage = void 0;
 const dotEnvConfig_1 = __importDefault(require("./dotEnvConfig/dotEnvConfig"));
 const secret_manager_1 = require("@google-cloud/secret-manager");
 const apiError_1 = __importDefault(require("./api/apiError"));
@@ -20,6 +21,7 @@ const util_1 = require("util");
 const credentials = JSON.parse(dotEnvConfig_1.default.GOOGLE_CREDENTIALS);
 const client = new secret_manager_1.SecretManagerServiceClient({ credentials });
 const storage = new storage_1.Storage({ credentials });
+exports.storage = storage;
 let bucket;
 function getSecret() {
     return __awaiter(this, void 0, void 0, function* () {

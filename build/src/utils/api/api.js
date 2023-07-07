@@ -11,7 +11,7 @@ const node_path_1 = __importDefault(require("node:path"));
 const cors_1 = __importDefault(require("cors"));
 const api = (0, express_1.default)();
 api.use((0, cors_1.default)({
-    origin: ["http://localhost:3000", "https://e-commerce-api-bluetech-production.up.railway.app/"],
+    origin: ["http://localhost:3000", "https://e-commerce-api-bluetech-production.up.railway.app/", "https://bluetech-lyart.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
