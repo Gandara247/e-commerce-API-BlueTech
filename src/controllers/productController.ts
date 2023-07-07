@@ -64,7 +64,7 @@ export default class productController {
             if(req.files) {
                 images = await storeImages(req.files as Array<Express.Multer.File>);
             }
-            const { name, description, price, inventory, categories} = req.body.data;
+            const { name, description, price, inventory, categories} = req.body;
             const product = await ProductRepository.updateProduct({
                 id,
                 name,
