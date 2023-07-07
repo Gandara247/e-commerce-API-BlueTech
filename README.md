@@ -239,20 +239,17 @@ Haverá uma página na qual o cliente poderá visualizar e alterar seus dados pe
 </a>
 
 ## <p align="center">Autores:</p></br>
-
  ## Back End:</br>
 - ### Gandara | XP48</br>
 - ### Abner Papassoni | 9809XP49</br>
 - ### Rayssa Triani | 5281XP49</br>
 - ### Luiz carlos | 5374XP49</br>
-
 ## Front End:</br>
 - ### Gustavo  | 9751XP49</br>
 - ### Matheus Oliveira | 9750XP49</br>
 - ### Raimundo Ferreira | 5607000XP49</br>
 - ### Tiago Jesus | 5282XP49</br>
-- ### Neylor Chaves | 5376XP49</br>
-  
+- ### Neylor Chaves | 5376XP49</br>  
 <a href="">
     <img src="./images/forReadme/linha%20neon.png" alt="Documentação API" width="1080" height="100">
 </a>
