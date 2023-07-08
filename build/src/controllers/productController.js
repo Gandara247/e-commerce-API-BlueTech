@@ -80,7 +80,7 @@ class productController {
                 if (req.files) {
                     images = yield (0, storeImages_1.default)(req.files);
                 }
-                const { name, description, price, inventory, categories } = req.body.data;
+                const { name, description, price, inventory, categories } = req.body;
                 const product = yield productsRepository_1.default.updateProduct({
                     id,
                     name,
